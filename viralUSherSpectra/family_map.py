@@ -1,0 +1,42 @@
+import re
+RULES = [
+ (r"African_swine","Asfarviridae"),(r"Aleutian|parvovirus|bocavirus|adeno_associated|Adeno_associated","Parvoviridae"),
+ (r"Avian_leukosis|leukemia|T_cell_leukemia|immunodeficiency","Retroviridae"),
+ (r"Avian_orthoavulavirus|Human_respirovirus|Measles|Mumps|Peste_des|distemper","Paramyxoviridae"),
+ (r"Avian_orthoreovirus|Mammalian_orthoreovirus|Piscine_orthoreovirus|Rice_black_streaked","Spinareoviridae"),
+ (r"Bluetongue|Epizootic|Orbivirus|Rotavirus","Sedoreoviridae"),
+ (r"Infectious_bursal|Infectious_pancreatic","Birnaviridae"),
+ (r"circovirus|Circovirus|Beak_and_feather","Circoviridae"),
+ (r"Betacoronavirus|coronavirus|Infectious_bronchitis|Porcine_epidemic|peritonitis","Coronaviridae"),
+ (r"polyomavirus|Betapolyomavirus","Polyomaviridae"),
+ (r"Bovine_viral|Classical_swine|GB_virus|Hepatitis_C|Japanese_enceph|Mogiana|Tick_borne|Usutu|West_Nile|Yellow_fever|Zika|dengue","Flaviviridae"),
+ (r"Capillovirus|Foveavirus|Grapevine_Pinot|rupestris|Trichovirus","Betaflexiviridae"),
+ (r"Cardamom","Nanoviridae"),(r"Chicken_anemia|Torque_teno","Anelloviridae"),
+ (r"Chikungunya|Eastern_equine","Togaviridae"),
+ (r"Citrus_tristeza|leafroll","Closteroviridae"),
+ (r"Enterovirus|enterovirus|Foot_and_mouth|Hepatovirus|Parechovirus|kobuvirus|Human_rhinovirus|rhinovirus","Picornaviridae"),
+ (r"alphaherpesvirus|betaherpesvirus|gammaherpesvirus","Orthoherpesviridae"),
+ (r"Equine_arteritis|Lelystad|Porcine_reproductive","Arteriviridae"),
+ (r"calicivirus|Norovirus|Sapovirus|Rabbit_hemorrhagic","Caliciviridae"),
+ (r"Hepatitis_B","Hepadnaviridae"),(r"Hepatitis_E|Paslahepevirus","Hepeviridae"),
+ (r"Hepatitis_delta","Kolmioviridae"),
+ (r"Hop_stunt|Potato_spindle","Pospiviroidae"),(r"Peach_latent","Avsunviroidae"),
+ (r"adenovirus|Mastadenovirus|mastadenovirus","Adenoviridae"),
+ (r"metapneumovirus|orthopneumovirus","Pneumoviridae"),
+ (r"papillomavirus","Papillomaviridae"),
+ (r"Influenza|Isavirus","Orthomyxoviridae"),
+ (r"Lumpy_skin|Monkeypox|vaccinia","Poxviridae"),
+ (r"Lyssavirus|Viral_hemorrhagic_septicemia","Rhabdoviridae"),
+ (r"Maize_streak|Tomato_leaf_curl|Tomato_yellow_leaf","Geminiviridae"),
+ (r"Mamastrovirus","Astroviridae"),(r"Mammarenavirus","Arenaviridae"),
+ (r"Oropouche","Peribunyaviridae"),(r"Orthohantavirus","Hantaviridae"),
+ (r"Orthonairovirus","Nairoviridae"),(r"Orthotospovirus","Tospoviridae"),
+ (r"Papaya_ringspot|Plum_pox|Potato_virus_Y|Sugarcane_mosaic|Turnip_mosaic|Watermelon_mosaic|Zucchini_yellow","Potyviridae"),
+ (r"Pepino","Alphaflexiviridae"),(r"Rice_yellow_mottle","Solemoviridae"),
+ (r"Rift_Valley|SFTS|Severe_fever","Phenuiviridae"),(r"Rubella","Matonaviridae"),
+ (r"Varroa","Iflaviridae"),(r"Zaire_ebolavirus","Filoviridae"),
+]
+def family(name):
+    for pat,fam in RULES:
+        if re.search(pat,name): return fam
+    return None
